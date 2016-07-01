@@ -1,2 +1,2 @@
 Main-Class: visolate.Main
-
+Class-Path: .:./lib/commons-cli-1.2.jar

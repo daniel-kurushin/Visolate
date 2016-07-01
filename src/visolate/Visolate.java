@@ -61,13 +61,19 @@ public class Visolate extends JPanel implements SimulatorUI {
 	}
 
 	public Visolate(File file) {
+System.err.println("Visolate");
 
 		processstatus=0;
+System.err.println("Visolate");
 		display = new Display(this);
+System.err.println("Visolate");
 		simulator = new Simulator(this);
+System.err.println("Visolate");
 		model = new Model(this);
+System.err.println("Visolate");
 		// TODO: get a toolpathsProcessor here, too, and get rid of myToolpathsProcessor.
 		gCodeWriter = new GCodeFileWriter();
+System.err.println("Visolate");
 
 		setBackground(Color.WHITE);
 		setOpaque(true);
@@ -90,6 +96,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 		add(box, "Center");
 
 		//make display take up max available space
+System.err.println("Visolate");
 
 		Dimension orig = getPreferredSize();
 
@@ -104,6 +111,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 
 		display.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 		setPreferredSize(orig);
+System.err.println("Visolate");
 
 		if (file != null)
 			loadFile(file);
@@ -125,7 +133,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 					loadFile();
 				}});
 			myLoadFileBox.add(loadButton);
-			
+
 			loadField = new JTextField();
 			d = loadField.getPreferredSize();
 			loadField.setMaximumSize(new Dimension(Integer.MAX_VALUE, d.height));
@@ -396,7 +404,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 		}
 		return myInitialXPanel;
 	}
-	
+
 	private JPanel getInitialYPanel() {
 		if (myInitialYPanel == null) {
 			myInitialYPanel = new JPanel();
@@ -423,7 +431,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 		}
 		return myInitialYPanel;
 	}
-	
+
 	private Component getZDownMovementPanel() {
 		if (myZDownMovementPanel == null) {
 			myZDownMovementPanel = new JPanel();
@@ -710,7 +718,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 	private void load(InputStream inputStream) {
 
 		stopProcess();
-    
+
     enableControls(false);
     myToolpathsProcessor = null;
 
@@ -756,7 +764,7 @@ public class Visolate extends JPanel implements SimulatorUI {
 						"Overwrite existing G-Code file " + file + "?",
 						"Overwrite?",
 						JOptionPane.YES_NO_OPTION);
-				if (yesno != JOptionPane.YES_OPTION) {					
+				if (yesno != JOptionPane.YES_OPTION) {
 					return;
 				}
 			}

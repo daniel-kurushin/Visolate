@@ -32,7 +32,7 @@ import org.apache.commons.cli.*;
 public class Main extends JApplet {
 
   private static final long serialVersionUID = 1L;
-  
+
   public static final String APPNAME = "Visolate 3.1.1";
   public static final int DEF_LOC_X = 100;
   public static final int DEF_LOC_Y = 100;
@@ -53,9 +53,9 @@ public class Main extends JApplet {
             visolate.loadDemo();
           }
         });
-    
+
   }
- 
+
   // This is needed when Visolate is run as an applet.
   public void destroy() {
     visolate.destroy();
@@ -63,7 +63,7 @@ public class Main extends JApplet {
 
   public static void main(final String[] argv) {
 
-    CommandLineParser parser = new PosixParser();
+    CommandLineParser parser = new DefaultParser();
     Options options = new Options();
 
     options.addOption( "h", "help", false, "Display this help and exit." );
@@ -107,11 +107,12 @@ public class Main extends JApplet {
             System.err.println("Error: Too many arguments.");
             System.exit(1);
     }
-  
+
     final JFrame frame = new JFrame(APPNAME);
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocation(DEF_LOC_X, DEF_LOC_Y);
+System.err.println("Start");
 
     // Add the Enter key to the forward traversal keys, so fields loose focus
     // when using it in a field and we don't need to set up both, an ActionListener
@@ -122,9 +123,12 @@ public class Main extends JApplet {
     newForwardKeys.add(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0));
     frame.setFocusTraversalKeys(
         KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, newForwardKeys);
-    
+System.err.println("Start");
+
     final Visolate visolate = new Visolate();
+System.err.println("Start");
     visolate.commandline = commandline;
+System.err.println("Start");
 
     Container contentPane = frame.getContentPane();
     contentPane.setLayout(new BorderLayout());
