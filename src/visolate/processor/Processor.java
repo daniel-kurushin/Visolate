@@ -91,7 +91,7 @@ public abstract class Processor {
 //    System.out.println("flat: " + flatGeometryWas);
 //    System.out.println("translucent: " + wasTranslucent);
 //    System.out.println("gcode: " + gcodeGeometryWas);
-//    System.out.println("tool diameter: " + toolDiameterWas);
+    System.out.println("tool diameter: " + toolDiameterWas);
 
     dpi = display.getDPI();
 

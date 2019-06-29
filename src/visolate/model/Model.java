@@ -241,8 +241,8 @@ public class Model extends JPanel {
 		offsetField.setPreferredSize(new Dimension(columnWidth*6, d.height));
 		offsetField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { updateOffset(); } });
-		//    offsetField.addFocusListener(new FocusAdapter() {
-		//        public void focusLost(FocusEvent e) { updateOffset(); } });
+		    offsetField.addFocusListener(new FocusAdapter() {
+		        public void focusLost(FocusEvent e) { updateOffset(); } });
 		settingsBox.add(offsetField);
 
 		settingsBox.add(Box.createHorizontalGlue());
